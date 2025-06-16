@@ -8,7 +8,7 @@ const gamesRoutes = require('./routes/games');
 const ordersRoutes = require('./routes/orders');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());                     // Дозволяє доступ із браузера
@@ -31,10 +31,9 @@ app.use('/orders', ordersRoutes);       // Купівля, бібліотека
 
 // Запуск сервера
 app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Сервер запущено на порту ${PORT}`);
   const os = require('os');
   const networkInterfaces = os.networkInterfaces();
-
-  console.log(`Сервер доступний за такими адресами:`);
 
   Object.values(networkInterfaces).forEach(interfaces =>
     interfaces.forEach(iface => {
