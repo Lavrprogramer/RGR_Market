@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1748537545624,
+    "username": "admin",
+    "password": "$2b$08$0ZI8JBORKHZFhi3odynAC.hb7i/X4df3IyihIA0KpIBSzjbHJ11Iy",
+    "role": "admin",
+    "balance": 29001000
+  },
+  {
+    "id": 1748538862645,
+    "username": "user",
+    "password": "$2b$08$O3QNAa1tSf.AIkJ8XerC2uCHW2m8eKatlI7eWP4uTHOrGHXVRMsiC",
+    "role": "user",
+    "balance": 878
+  },
+  {
+    "id": 1748547193051,
+    "username": "Lavr",
+    "password": "$2b$08$UrNXvGMrK2C.lwbyDPL3GeVUsXiDWymcQpDuNNMsEFs9d.JSZqagW",
+    "role": "user",
+    "balance": 20942
+  },
+  {
+    "id": 1748631306714,
+    "username": "Max",
+    "password": "$2b$08$ECsySJOpOdru3i.HT6NWzOVG3mTtum07KbWdhpnjrSrNCOe.pxQRe",
+    "role": "user",
+    "balance": 20823
+  },
+  {
+    "id": 1748709125803,
+    "username": "polina",
+    "password": "$2b$08$Cfv2fCDOCzAESSKB9.AKGOVcjf0r6ECsIELZURClIIZfSBO4ezbAq",
+    "role": "user",
+    "balance": 50153
+  },
+  {
+    "id": 1748866760104,
+    "username": "natural",
+    "password": "$2b$08$.XamjzjsDunX9aWaPfgXx.D3dI4Te3Ri1gKJ3OlesIxkckOCHzBvm",
+    "role": "user",
+    "balance": 265
+  },
+  {
+    "id": 1749741058203,
+    "username": "Artem",
+    "password": "$2b$08$.vnVOu6E/l0fE0/pUCbxaOTaFQ6uLYne0dfs2S7qDbGU2IArCk7Yy",
+    "role": "user",
+    "balance": 245
+  },
+  {
+    "id": 1750003805670,
+    "username": "user2",
+    "password": "$2b$08$ZzsHQHpphB0NWCI4QMg.o.uTFcObl4Nnig67/D0Sc0XlYAywfKCfK",
+    "role": "user",
+    "balance": 1265
+  }
+]

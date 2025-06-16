@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Завантаження гри</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styleDownload.css">
+</head>
+<body>
+  <header>
+    <button id="backBtn">&larr; Назад</button>
+    <h1>Завантаження гри</h1>
+  </header>
+  <main>
+    <p id="statusText">Підготовка до завантаження...</p>
+    <div class="progress-bar" aria-label="Прогрес завантаження">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </main>
+
+  <script>
+    const API_URL = `${location.protocol}//${location.hostname}:3000`; // замінити API_URL!!!
+    const token = localStorage.getItem('token');
+    const gameId = parseInt(new URLSearchParams(location.search).get('id'), 10);
+    const statusText = document.getElementById('statusText');
+    const progressFill = document.getElementById('progressFill');
+    const backBtn = document.getElementById('backBtn');
+
+    backBtn.onclick = () => {
+      window.history.back();
+    };
+
+    async function downloadGame() {
+      if (!token) {
+        statusText.textContent = 'Будь ласка, увійдіть, щоб завантажувати гру.';
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_URL}/games/download/${gameId}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (!res.ok) {
+          statusText.textContent = `Помилка: ${res.status}`;
+          return;
+        }
+
+        const contentLength = res.headers.get('Content-Length');
+        if (!contentLength) {
+          statusText.textContent = 'Неможливо визначити розмір файлу.';
+          return;
+        }
+
+        const total = parseInt(contentLength, 10);
+        let loaded = 0;
+
+        const reader = res.body.getReader();
+        const chunks = [];
+        statusText.textContent = 'Завантаження...';
+
+        while(true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          loaded += value.length;
+          const percent = ((loaded / total) * 100).toFixed(2);
+          progressFill.style.width = percent + '%';
+          statusText.textContent = `Завантажено: ${percent}%`;
+        }
+
+        // Збираємо всі частини в один Blob
+        const blob = new Blob(chunks);
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `game_${gameId}.zip`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        statusText.textContent = 'Завантаження завершено!';
+      } catch (err) {
+        statusText.textContent = 'Помилка завантаження файлу.';
+        console.error(err);
+      }
+    }
+
+    downloadGame();
+  </script>
+</body>
+</html>

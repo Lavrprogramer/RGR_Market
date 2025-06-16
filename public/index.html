@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Games Market</h1>
+    <nav>
+      <a href="login.html" id="loginLink">Вхід</a>
+      <a href="register.html" id="registerLink">Реєстрація</a>
+      <a href="library.html" id="libraryLink" style="display:none;">Моя бібліотека</a>
+      <a href="topup.html" id="topupLink" style="display:none;">Поповнити баланс</a>
+      <a href="admin.html" id="adminLink" style="display:none;">Адмін</a>
+    </nav>
+    <div class="user-info" id="userInfo" style="display:none;">
+      <span id="usernameDisplay"></span>
+      <span id="userBalance"></span>
+      <button id="logoutButton">Вийти</button>
+    </div>
+  </header>
+
+  <div class="banner"></div>
+
+  <main>
+    <section class="filters">
+      <input type="text" id="search" placeholder="Пошук гри за назвою">
+      <select id="genreFilter">
+        <option value="">Усі жанри</option>
+        <option value="Shooter">Шутер</option>
+        <option value="Action">Екшн</option>
+        <option value="Adventure">Пригоди</option>
+        <option value="RPG">РПГ</option>
+        <option value="Strategy">Стратегія</option>
+        <option value="Simulation">Симулятор</option>
+        <option value="Sports">Спорт</option>
+        <option value="Puzzle">Головоломки</option>
+        <option value="Horror">Жахи</option>
+        <option value="Indie">Інді</option>
+      </select>
+      <button onclick="applyFilters()">Пошук</button>
+    </section>
+
+    <h2>Популярні ігри</h2>
+
+    <div class="games-panel">
+      <section id="game-list" class="game-list">
+        <!-- Карточки ігор зʼявляться тут -->
+      </section>
+    </div>
+  </main>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/main.js"></script>
+  <script>
+    
+  </script>
+</body>
+</html>

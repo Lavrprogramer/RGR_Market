@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація |  Games Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html"> Games Market</a></h1>
+    <nav>
+      <a href="index.html">Магазин</a>
+      <a href="login.html">Вхід</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="auth-container">
+      <h2>Реєстрація</h2>
+      <form id="registerForm" class="auth-form">
+        <input type="text" id="username" placeholder="Ім'я користувача" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button type="submit">Зареєструватися</button>
+      </form>
+      <p>Вже є акаунт? <a href="login.html">Увійти</a></p>
+    </div>
+  </main>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/register.js"></script>
+</body>
+</html>

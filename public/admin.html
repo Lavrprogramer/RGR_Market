@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель адміністратора | Games Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Панель адміністратора</h1>
+    <nav>
+      <a href="index.html">← Назад до магазину</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Керування іграми</h2>
+    <form id="gameForm" class="admin-form">
+      <input type="hidden" id="gameId"> 
+      <input type="text" id="title" placeholder="Назва гри" required>
+      <input type="text" id="genre" placeholder="Жанр" required>
+      <input type="number" id="price" placeholder="Ціна" step="0.01" required>
+      <input type="text" id="fileUrl" placeholder="URL файлу гри (наприклад, /games/mygame.zip)" required>
+      <textarea id="description" placeholder="Детальний опис гри"></textarea>
+      <input type="text" id="images" placeholder="URL-и фото (розділіть комою, наприклад, /images/game1_1.jpg, /images/game1_2.jpg)">
+      <button type="submit">Зберегти гру</button>
+    </form>
+
+    <button onclick="resetForm()">Додати нову гру</button>
+    <button onclick="loadGames()">Оновити список ігор</button>
+    <div id="admin-panel" class="game-management-list"></div>
+  </main>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/admin.js"></script>
+</body>
+</html>

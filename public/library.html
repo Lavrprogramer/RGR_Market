@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моя бібліотека |  Games Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html"> Games Market</a></h1>
+    <nav>
+      <a href="index.html">Магазин</a>
+      <a href="topup.html">Поповнити баланс</a>
+      <a href="admin.html" id="adminLink" style="display:none;">Адмін</a>
+    </nav>
+    <div class="user-info" id="userInfo" style="display:none;">
+      <span id="usernameDisplay"></span>
+      <span id="userBalance"></span>
+      <button id="logoutButton">Вийти</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Моя бібліотека</h2>
+    
+    <div class="games-panel">
+      <section id="library-list" class="game-list">
+        <!-- Ігри з бібліотеки з'являться тут -->
+      </section>
+    </div>
+  </main>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/library.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гра | Games Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Games Market</h1>
+    <nav>
+      <a href="index.html">← Назад до магазину</a>
+    </nav>
+  </header>
+
+  <main id="game-container" class="game-page">
+    <div class="game-header">
+      <div class="main-preview">
+        <img id="mainGameImage" src="./images/standart.png" alt="Головне зображення">
+      </div>
+      <div class="game-sidebar">
+        <h2 id="gameTitle">Назва Гри</h2>
+        <p id="gameGenre"></p>
+        <p class="price" id="gamePrice"></p>
+        <div id="action"></div>
+      </div>
+    </div>
+
+    <div class="screenshot-section">
+      <div id="screenshotGallery" class="screenshot-thumbnails"></div>
+    </div>
+
+    <div class="game-description">
+      <h3>Про гру</h3>
+      <p id="gameDescription">Опис гри буде тут...</p>
+    </div>
+  </main>
+
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <p>Ви дійсно хочете придбати цю гру?</p>
+      <button id="confirmBuy">Так, придбати</button>
+      <button onclick="closeModal()">Скасувати</button>
+    </div>
+  </div>
+
+  <script src="scripts/api.js"></script>
+  <script src="scripts/game.js"></script>
+
+</body>
+</html>
