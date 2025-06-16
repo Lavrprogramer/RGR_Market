@@ -1,4 +1,6 @@
-const API_URL = `${location.protocol}//${location.hostname}:3000`;
+const API_URL = `https://rgr-market.onrender.com`;
+  
+//  `${location.protocol}//${location.hostname}:3000`;
 
 
 function getToken() {
